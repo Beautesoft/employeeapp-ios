@@ -1,0 +1,34 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+/*.xcodeproj/
+/*.xcworkspace/
+
+# Swift Package Manager
+/.build/
+/*.swiftpm/
+/Package.resolved
+
+# CocoaPods
+/Pods/
+/*.xcconfig
+Podfile.lock
+Pods*.txt
+
+# Carthage
+/Carthage/Build/
+
+# App icons
+*.appiconset/
+
+# Archive
+*.ipa
+*.xcarchive
+
+# macOS
+.DS_Store
+.idea/
+.git/
+Beautesoft HR 13102022/
+Beautesoft HR 13102022/BeauteSoft HR.ipa
