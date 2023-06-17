@@ -24,7 +24,7 @@
 		0CC95E292813EAAE0016F211 /* AppointmentListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CC95E272813EAAE0016F211 /* AppointmentListTableViewCell.xib */; };
 		0CC95E2C2813EED60016F211 /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC95E2B2813EED60016F211 /* AppointmentModel.swift */; };
 		0CC95E2E2813EF2B0016F211 /* SalesCommissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC95E2D2813EF2B0016F211 /* SalesCommissionModel.swift */; };
-		0DE72619B139A2B36FC98717 /* Pods_BeauteSoft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D417CD9139C2B157436C09F /* Pods_BeauteSoft.framework */; };
+		3AEF1026AFE3697C4042BCA9 /* Pods_BeauteSoft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 212AE5A8CDD021950A4911F8 /* Pods_BeauteSoft.framework */; };
 		8C02AD63227A083300160E24 /* TaskDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C02AD62227A083300160E24 /* TaskDetail.swift */; };
 		8C0C1A3022CDD9A500CC5691 /* CustomerArrivedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0C1A2F22CDD9A500CC5691 /* CustomerArrivedVC.swift */; };
 		8C1053BA22CF2D2300D9F89E /* DashboardDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1053B822CF2D2300D9F89E /* DashboardDetailTVC.swift */; };
@@ -189,7 +189,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		058FF06B09134BBF8CE3F2F5 /* Pods-BeauteSoft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeauteSoft.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeauteSoft/Pods-BeauteSoft.release.xcconfig"; sourceTree = "<group>"; };
 		0C1C710628127790000568FD /* SalesCommisionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesCommisionViewController.swift; sourceTree = "<group>"; };
 		0C1C710828127B46000568FD /* SelectStaffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStaffViewController.swift; sourceTree = "<group>"; };
 		0C1C710A28127D15000568FD /* SelectStaff.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectStaff.storyboard; sourceTree = "<group>"; };
@@ -207,8 +206,8 @@
 		0CC95E272813EAAE0016F211 /* AppointmentListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentListTableViewCell.xib; sourceTree = "<group>"; };
 		0CC95E2B2813EED60016F211 /* AppointmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		0CC95E2D2813EF2B0016F211 /* SalesCommissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalesCommissionModel.swift; sourceTree = "<group>"; };
-		4D417CD9139C2B157436C09F /* Pods_BeauteSoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeauteSoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		80CF96369362D18BB8693712 /* Pods-BeauteSoft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeauteSoft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeauteSoft/Pods-BeauteSoft.debug.xcconfig"; sourceTree = "<group>"; };
+		1B1BD1C398338062F9CAF7B6 /* Pods-BeauteSoft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeauteSoft.release.xcconfig"; path = "Target Support Files/Pods-BeauteSoft/Pods-BeauteSoft.release.xcconfig"; sourceTree = "<group>"; };
+		212AE5A8CDD021950A4911F8 /* Pods_BeauteSoft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeauteSoft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C02AD62227A083300160E24 /* TaskDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetail.swift; sourceTree = "<group>"; };
 		8C0C1A2F22CDD9A500CC5691 /* CustomerArrivedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerArrivedVC.swift; sourceTree = "<group>"; };
 		8C1053B822CF2D2300D9F89E /* DashboardDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardDetailTVC.swift; sourceTree = "<group>"; };
@@ -372,6 +371,7 @@
 		A2F0482F226BA5E1000D6412 /* SideBarMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuVC.swift; sourceTree = "<group>"; };
 		A2F04833226BBCB0000D6412 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		A2F04836226BBCD8000D6412 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		DB1E404E0C6E78080440E6D4 /* Pods-BeauteSoft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeauteSoft.debug.xcconfig"; path = "Target Support Files/Pods-BeauteSoft/Pods-BeauteSoft.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -379,7 +379,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DE72619B139A2B36FC98717 /* Pods_BeauteSoft.framework in Frameworks */,
+				3AEF1026AFE3697C4042BCA9 /* Pods_BeauteSoft.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,12 +469,22 @@
 			path = AppointmentListTableViewCell;
 			sourceTree = "<group>";
 		};
-		360D1985CB78FEE6EAADCBBF /* Frameworks */ = {
+		27863D0B9253231FBC09C2C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4D417CD9139C2B157436C09F /* Pods_BeauteSoft.framework */,
+				212AE5A8CDD021950A4911F8 /* Pods_BeauteSoft.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F732A858E742A1E1E181B87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB1E404E0C6E78080440E6D4 /* Pods-BeauteSoft.debug.xcconfig */,
+				1B1BD1C398338062F9CAF7B6 /* Pods-BeauteSoft.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		8C10CCAB22CDCE3D00015836 /* CustomerCheckIn */ = {
@@ -775,15 +785,6 @@
 			path = WorkScheduleVC;
 			sourceTree = "<group>";
 		};
-		8E402BF4388EA27C94C0C5ED /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				80CF96369362D18BB8693712 /* Pods-BeauteSoft.debug.xcconfig */,
-				058FF06B09134BBF8CE3F2F5 /* Pods-BeauteSoft.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A20AC226226C47DF00F1561A /* Change Password */ = {
 			isa = PBXGroup;
 			children = (
@@ -946,8 +947,8 @@
 			children = (
 				A2AE2A79226AF77A00E57718 /* BeauteSoft */,
 				A2AE2A78226AF77A00E57718 /* Products */,
-				8E402BF4388EA27C94C0C5ED /* Pods */,
-				360D1985CB78FEE6EAADCBBF /* Frameworks */,
+				7F732A858E742A1E1E181B87 /* Pods */,
+				27863D0B9253231FBC09C2C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1119,11 +1120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2AE2A89226AF77C00E57718 /* Build configuration list for PBXNativeTarget "BeauteSoft" */;
 			buildPhases = (
-				95847BDCEB5A5FF14D93598C /* [CP] Check Pods Manifest.lock */,
+				892160BBF38C1740FD4E77B0 /* [CP] Check Pods Manifest.lock */,
 				A2AE2A73226AF77A00E57718 /* Sources */,
 				A2AE2A74226AF77A00E57718 /* Frameworks */,
 				A2AE2A75226AF77A00E57718 /* Resources */,
-				065A4B48107DA8CB070BC783 /* [CP] Embed Pods Frameworks */,
+				1805884FC81D5D1B19B04775 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1208,7 +1209,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		065A4B48107DA8CB070BC783 /* [CP] Embed Pods Frameworks */ = {
+		1805884FC81D5D1B19B04775 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1225,16 +1226,20 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BeauteSoft/Pods-BeauteSoft-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		95847BDCEB5A5FF14D93598C /* [CP] Check Pods Manifest.lock */ = {
+		892160BBF38C1740FD4E77B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BeauteSoft-checkManifestLockResult.txt",
 			);
@@ -1541,7 +1546,7 @@
 		};
 		A2AE2A8A226AF77C00E57718 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80CF96369362D18BB8693712 /* Pods-BeauteSoft.debug.xcconfig */;
+			baseConfigurationReference = DB1E404E0C6E78080440E6D4 /* Pods-BeauteSoft.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -1564,7 +1569,7 @@
 		};
 		A2AE2A8B226AF77C00E57718 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 058FF06B09134BBF8CE3F2F5 /* Pods-BeauteSoft.release.xcconfig */;
+			baseConfigurationReference = 1B1BD1C398338062F9CAF7B6 /* Pods-BeauteSoft.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
