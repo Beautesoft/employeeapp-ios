@@ -118,6 +118,12 @@ class LoginVC: UIViewController {
             else if (txtLocale.trimmedText.uppercased() == "IMPRESSION"){
                 base = "http://103.253.15.102:9591/Main_API/api/"
                 baseDashboard = "http://103.253.15.102:9591/Main_API/api/"}
+            else if (txtLocale.trimmedText.uppercased() == "EMBRACE"){
+                           base = "http://103.253.14.203:4015/Main_API/api/"
+                           baseDashboard = "http://103.253.14.203:4015/Main_API/api/"}
+            else if (txtLocale.trimmedText.uppercased() == "ESSENTIALS"){
+                           base = "http://103.253.15.102:9599/Main_API/api/"
+                           baseDashboard = "http://103.253.15.102:9599/Main_API/api/"}
             else {
                 base = "http://103.253.14.203/main/api/"
                 baseDashboard = "http://103.253.14.203/main/api/"}
