@@ -5,7 +5,7 @@
 //  Created by Himanshu Singla on 20/04/19.
 //  Copyright © 2019 Himanshu Singla. All rights reserved.
 //
-
+import Firebase
 import UIKit
 var profile = Profile()
 class LoginVC: UIViewController {
@@ -130,11 +130,22 @@ class LoginVC: UIViewController {
             else {
                 base = "http://103.253.14.203/main/api/"
                 baseDashboard = "http://103.253.14.203/main/api/"}
-            
+
+            getLocaleBaseURL(name: txtLocale.trimmedText.uppercased()) { baseUrl in
+                       if let baseUrl = baseUrl {
+                           // Use the retrieved base URL
+                           base = baseUrl
+                           baseDashboard = baseUrl
+                           self.login()
+                       } else {
+                           // Handle error or no data case
+                           self.singleButtonAlertWith(message: Messages.firebaseRetrieveBaseURLError)
+                       }
+                   }
             UserDefaults.standard.set(base, forKey: "base") //setObject
             UserDefaults.standard.set(txtLocale.trimmedText.uppercased(), forKey: "locale") //setObject
             //
-             login()
+             
         }
        
     }
@@ -167,4 +178,24 @@ class LoginVC: UIViewController {
             AppDelegate.shared.gotoHome()
         }
     }
+    func getLocaleBaseURL(name: String, completion: @escaping (String?) -> Void) {
+           // Create a reference to the Firebase database
+           let databaseReference = Database.database().reference()
+           // Read the JSON data
+           databaseReference.child("ClientUrls").observeSingleEvent(of: .value) { (snapshot) in
+               if let value = snapshot.value as? [String: Any] {
+                   for (key, data) in value {
+                       if key == name, let aesData = data as? [String: Any] {
+                           if let baseUrl = aesData["Baseurl"] as? String {
+                               completion(baseUrl)
+                               return
+                           }
+                       }
+                   }
+               } else {
+                   print("Error: Invalid JSON format")
+                   completion(nil)
+               }
+           }
+       }
 }

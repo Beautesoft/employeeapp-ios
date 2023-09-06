@@ -79,6 +79,7 @@ enum Messages {
     case deactivatedMember
     case chooseOutlet
     case profileUpdated
+    case firebaseRetrieveBaseURLError
     var value: String {
         switch self {
         case .custom(let message) : return message
@@ -120,6 +121,8 @@ enum Messages {
             return "Please enter first name"
         case .enterLastName:
             return "Please enter last name"
+        case .firebaseRetrieveBaseURLError:
+            return "Unable to retrieve base URL."
         case .internetError: return "No internet connection"
         default:
             return ""

@@ -11,4 +11,7 @@ target 'BeauteSoft' do
 	pod 'SDWebImage'
 	pod 'SWRevealViewController'
         pod 'FSCalendar'
+	pod ‘Firebase’
+	pod ‘Firebase/Analytics’
+	pod ‘Firebase/Database’
 end
