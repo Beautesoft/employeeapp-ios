@@ -189,7 +189,6 @@
 		CE2C29E42A52A21800436924 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C29E32A52A21800436924 /* GoogleService-Info.plist */; };
 		CEB6F39B2A4BCA40001E2365 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F39A2A4BCA34001E2365 /* libz.tbd */; };
 		CEB6F39C2A4BCA58001E2365 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F3992A4BC984001E2365 /* libsqlite3.tbd */; };
-		CEB6F39E2A4BCA7A001E2365 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F39D2A4BCA6D001E2365 /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -389,7 +388,6 @@
 			files = (
 				CEB6F39C2A4BCA58001E2365 /* libsqlite3.tbd in Frameworks */,
 				3AEF1026AFE3697C4042BCA9 /* Pods_BeauteSoft.framework in Frameworks */,
-				CEB6F39E2A4BCA7A001E2365 /* libc++.tbd in Frameworks */,
 				CEB6F39B2A4BCA40001E2365 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1566,14 +1564,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 3.1;
 				DEVELOPMENT_TEAM = WKVWWJ792U;
 				INFOPLIST_FILE = BeauteSoft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imark.BeauteSoft;
 				PRODUCT_NAME = "Beautesoft HR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1589,14 +1587,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.3;
+				CURRENT_PROJECT_VERSION = 3.1;
 				DEVELOPMENT_TEAM = WKVWWJ792U;
 				INFOPLIST_FILE = BeauteSoft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imark.BeauteSoft;
 				PRODUCT_NAME = "Beautesoft HR";
 				PROVISIONING_PROFILE_SPECIFIER = "";

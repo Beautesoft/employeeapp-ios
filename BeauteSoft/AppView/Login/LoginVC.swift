@@ -40,6 +40,7 @@ class LoginVC: UIViewController {
         } else {
             //Yoonus
             //base = "http://103.253.14.203/main/api/"
+            /*
             if txtLocale.trimmedText.uppercased() == "TNCDEMO" {
                 base = "http://103.253.15.102:88/main_api/api/"
                 baseDashboard = "http://103.253.15.102:88/main_api/api/"
@@ -130,6 +131,7 @@ class LoginVC: UIViewController {
             else {
                 base = "http://103.253.14.203/main/api/"
                 baseDashboard = "http://103.253.14.203/main/api/"}
+            */
 
             getLocaleBaseURL(name: txtLocale.trimmedText.uppercased()) { baseUrl in
                        if let baseUrl = baseUrl {
