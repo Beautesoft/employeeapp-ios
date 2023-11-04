@@ -335,7 +335,7 @@ class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
     }
     private func markAttendance(attendanceType: String, inDate: String, inTime: String, outDate: String, outTime: String, qrCode: String, phoneNumber: String) {
         //let parameter = ["attendanceType": attendanceType,"userID": profile.userID ?? "","siteCode": profile.siteCode ?? "", "inDate": inDate, "inTime": inTime, "outDate": outDate, "outTime": outTime , "qrCode": qrCode] as [String:AnyObject]
-        let parameter = ["attendanceType": attendanceType,"userID": profile.userID ?? "","siteCode": profile.siteCode ?? "", "inDate": inDate, "inTime": inTime, "outDate": outDate, "outTime": outTime , "qrCode": qrCode, "phoneNumber": phoneNumber] as [String:AnyObject]
+        let parameter = ["attendanceType": attendanceType,"userID": profile.userID ?? "","siteCode": profile.siteCode ?? "", "inDate": inDate, "inTime": inTime, "outDate": outDate, "outTime": outTime , "qrCode": qrCode ?? "", "phoneNumber": phoneNumber ?? profile.userID ?? ""] as [String:AnyObject]
         let url = "\(base)\(Apis.markAttendance)"
         WebService.shared.postDataFor(api: url, parameters: parameter) { (sucess,response, msg) in
             self.singleButtonAlertWith(message: .custom("Attendance marked sucessfully") , completionOnButton: {
