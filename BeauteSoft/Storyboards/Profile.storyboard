@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,17 +13,17 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XBB-g3-eiw" customClass="ProfileVC" customModule="Beautesoft_HR" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9er-WC-jpu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNw-Sq-0dJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMF-di-4RN">
-                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By ACY7Lab - All rights reserved 2022(A03.31)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8th-eH-5rP">
-                                        <rect key="frame" x="148.5" y="16.5" width="303" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By ACY7Lab - All rights reserved 2023(A03.0-3.5)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8th-eH-5rP">
+                                        <rect key="frame" x="34.666666666666657" y="16.666666666666629" width="323.66666666666674" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -35,16 +37,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cp2-GC-Aj1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personal profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-76-PfS">
-                                        <rect key="frame" x="232.5" y="24" width="135.5" height="24"/>
+                                        <rect key="frame" x="128.66666666666669" y="24" width="135.66666666666669" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.48199999999999998" green="0.47843137250000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6S-nB-gwC">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="2"/>
+                                        <rect key="frame" x="0.0" y="60" width="393" height="2"/>
                                         <color key="backgroundColor" red="0.8862745098" green="0.84705882349999995" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="qcY-Bv-uxW"/>
@@ -78,13 +80,13 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nsm-Pb-4gH">
-                                <rect key="frame" x="0.0" y="63" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="122" width="393" height="646"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pgo-k8-2pB">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="538"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="538"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="wPa-Al-58b" customClass="UIImageViewCustomClass" customModule="Beautesoft_HR" customModuleProvider="target">
-                                                <rect key="frame" x="250" y="20" width="100" height="100"/>
+                                                <rect key="frame" x="146.66666666666666" y="20" width="100" height="100"/>
                                                 <color key="backgroundColor" red="0.4823529412" green="0.47843137250000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="100" id="cYF-Di-5WJ"/>
@@ -103,13 +105,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD1-ge-dvD">
-                                                <rect key="frame" x="300" y="137" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="196.66666666666666" y="137" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.4823529412" green="0.47843137250000001" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xB-Z8-Yph">
-                                                <rect key="frame" x="245" y="145" width="110" height="30"/>
+                                                <rect key="frame" x="141.66666666666666" y="145" width="110" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Edr-E3-Htr"/>
                                                     <constraint firstAttribute="width" constant="110" id="vSU-Jf-dIV"/>
@@ -130,7 +132,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-yB-LqY">
-                                                <rect key="frame" x="30" y="183" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="183" width="333" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="mSq-yD-avJ"/>
                                                 </constraints>
@@ -153,7 +155,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-7c-Szp">
-                                                <rect key="frame" x="30" y="241" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="241" width="333" height="50"/>
                                                 <color key="textColor" red="0.48199999999999998" green="0.47799999999999998" blue="0.28999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -176,7 +178,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Staff" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-Zb-m2L">
-                                                <rect key="frame" x="30" y="299" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="299" width="333" height="50"/>
                                                 <color key="textColor" red="0.48199999999999998" green="0.47799999999999998" blue="0.28999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -196,7 +198,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8l-EQ-oQ1">
-                                                <rect key="frame" x="30" y="357" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="357" width="333" height="50"/>
                                                 <color key="textColor" red="0.48199999999999998" green="0.47799999999999998" blue="0.28999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -216,7 +218,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-3A-OnR">
-                                                <rect key="frame" x="30" y="422" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="422" width="333" height="50"/>
                                                 <color key="textColor" red="0.48199999999999998" green="0.47799999999999998" blue="0.28999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -236,7 +238,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hU2-mz-KLC">
-                                                <rect key="frame" x="30" y="488" width="540" height="50"/>
+                                                <rect key="frame" x="30" y="488" width="333" height="50"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <state key="normal" title="Update Profile" backgroundImage="signInBg">
                                                     <color key="titleColor" red="0.48199999999999998" green="0.47799999999999998" blue="0.28999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,13 +248,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Emh-fB-g5q">
-                                                <rect key="frame" x="250" y="20" width="100" height="100"/>
+                                                <rect key="frame" x="146.66666666666666" y="20" width="100" height="100"/>
                                                 <connections>
                                                     <action selector="uploadImgBtntap:" destination="XBB-g3-eiw" eventType="touchUpInside" id="vf6-VF-Y1d"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqv-o1-g4c">
-                                                <rect key="frame" x="341.5" y="107" width="19" height="19"/>
+                                                <rect key="frame" x="235" y="107" width="19" height="19"/>
                                                 <state key="normal" backgroundImage="add_photo"/>
                                                 <connections>
                                                     <action selector="uploadImgBtntap:" destination="XBB-g3-eiw" eventType="touchUpInside" id="Se9-js-AKo"/>
@@ -346,9 +348,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_photo" width="19" height="19"/>
+        <image name="add_photo" width="19.333333969116211" height="19.333333969116211"/>
         <image name="back" width="8" height="15"/>
         <image name="profile" width="13" height="17"/>
-        <image name="signInBg" width="323.5" height="48.5"/>
+        <image name="signInBg" width="327" height="49"/>
     </resources>
 </document>
