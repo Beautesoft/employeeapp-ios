@@ -103,9 +103,6 @@ class LoginVC: UIViewController {
             else if (txtLocale.trimmedText.uppercased() == "SYNTHESIS"){
                 base = "http://103.253.14.203:4005/Main_API/api/"
                 baseDashboard = "http://103.253.14.203:4005/Main_API/api/"}
-            else if (txtLocale.trimmedText.uppercased() == "EMMABELLE"){
-                base = "http://103.253.15.102:9592/Main_api/api/"
-                baseDashboard = "http://103.253.15.102:9592/Main_api/api/"}
             else if (txtLocale.trimmedText.uppercased() == "MAGICION"){
                 base = "http://103.253.14.203:4006/Main_API/api/"
                 baseDashboard = "http://103.253.14.203:4006/Main_API/api/"}

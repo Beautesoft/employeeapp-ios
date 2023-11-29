@@ -14,22 +14,16 @@ import UIKit
 import AVFoundation
 class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
     
-    
     @IBOutlet weak var vwInfoHeightConst: NSLayoutConstraint!
     @IBOutlet weak var stackVwUseInfo: UIStackView!
     @IBOutlet weak var lblTapToScan: UILabel!
-    @IBOutlet var stackViewRest: UIStackView!
-    @IBOutlet var stackViewRoom: UIStackView!
+    
     @IBOutlet weak var lblEmpName: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet var clockOutBtn: UIButton!
     @IBOutlet var clockInBtn: UIButton!
-    @IBOutlet var roomingOutBtn: UIButton!
-    @IBOutlet var roomingInBtn: UIButton!
-    @IBOutlet var restOutBtn: UIButton!
-    @IBOutlet var restInBtn: UIButton!
     //Bar code Reader
     lazy var reader: QRCodeReader = QRCodeReader()
     lazy var readerVC: QRCodeReaderViewController = {
@@ -45,15 +39,7 @@ class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
     var clockBtn = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        vwInfoHeightConst.constant = 230
-        let locale = UserDefaultsManager.locale
-        if locale == "synthesis" || UserDefaultsManager.locale == "emmabelle" {
-          
-        }
-        else {
-            stackViewRest.isHidden = true
-            stackViewRoom.isHidden = true
-        }
+        vwInfoHeightConst.constant = 100
         stackVwUseInfo.isHidden = true
         getAttendenceReport()
         // Do any additional setup after loading the view.
@@ -67,7 +53,7 @@ class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
             if let result = response["result"] as? [[String: Any]] {
                 result.forEach({ (dict) in
                     self.stackVwUseInfo.isHidden = false
-                    self.vwInfoHeightConst.constant = 325
+                    self.vwInfoHeightConst.constant = 195
                     if let temp = dict["employeeName"] as? String {
                         self.lblEmpName.text = "Emp Name:             \(temp)"
                     }
@@ -83,151 +69,30 @@ class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
                       let date  = Utility.shared.formattedStringFromGivenDate(fromFormat: "dd/MM/yyyy", toFormat: "dd MMM, yyyy", dateString: temp)
                         self.lblDate.text = "Date:                        \(date)"
                     }
-                    //Yoonus enforce clock in and out active by default
-                    self.clockInBtn.isEnabled = true
-                    self.clockOutBtn.isEnabled = true
-                    let attnType = dict["attnType"] as? String
-                    if attnType == "00" {
-                        self.clockInBtn.isEnabled = false
-                        self.clockOutBtn.isEnabled = true
-                        
-                        self.restInBtn.isEnabled = false
-                        self.restOutBtn.isEnabled = true
-                        
-                        self.roomingInBtn.isEnabled = false
-                        self.roomingOutBtn.isEnabled = true
-                    } else if attnType == "01" {
-                        self.clockInBtn.isEnabled = true
-                        
-                        self.clockOutBtn.isEnabled = false
-                        self.restInBtn.isEnabled = false
-                        self.restOutBtn.isEnabled = false
-                        self.roomingInBtn.isEnabled = false
-                        self.roomingOutBtn.isEnabled = false
-                    } else if attnType == "02" {
-                        self.clockInBtn.isEnabled = false
-                        self.clockOutBtn.isEnabled = true
-                        
-                        self.restInBtn.isEnabled = false
-                        self.restOutBtn.isEnabled = true
-                        
-                        self.roomingInBtn.isEnabled = false
-                        self.roomingOutBtn.isEnabled = true
-                        
-                    } else if attnType == "03" {
-                        self.clockInBtn.isEnabled = false
-                        self.clockOutBtn.isEnabled = true
-                        self.restInBtn.isEnabled = true
-                        self.restOutBtn.isEnabled = false
-                        self.roomingInBtn.isEnabled = false
-                        self.roomingOutBtn.isEnabled = false
-                    } else if attnType == "04" {
-                        self.clockInBtn.isEnabled = false
-                        self.clockOutBtn.isEnabled = true
-                        
-                        self.restInBtn.isEnabled = false
-                        self.restOutBtn.isEnabled = true
-                        
-                        self.roomingInBtn.isEnabled = false
-                        self.roomingOutBtn.isEnabled = true
-                    } else if attnType == "05" {
-                        self.clockInBtn.isEnabled = false
-                        self.clockOutBtn.isEnabled = true
-                        
-                        self.restInBtn.isEnabled = false
-                        self.restOutBtn.isEnabled = false
-                        
-                        self.roomingInBtn.isEnabled = true
-                        
-                        self.roomingOutBtn.isEnabled = false
-                    } else {
-                        self.clockInBtn.isEnabled = true
-                        //Yoonus if no reply from the api for attntype, activata all
-                        self.clockOutBtn.isEnabled = true
-                        self.restInBtn.isEnabled = true
-                        self.restOutBtn.isEnabled = true
-                        self.roomingInBtn.isEnabled = true
-                        self.roomingOutBtn.isEnabled = true
-
-                    }
                })
             }
          }
       }
-    
+
     private func showData(dict: NSDictionary) {
         
     }
     //MARK: button action
     @IBAction func clockOutBtnTap(_ sender: UIButton) {
         clockBtn = "in"
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
+        sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
+        clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
         self.singleButtonAlertWith(message: .custom("Clock Out" ) , completionOnButton: nil)
     }
     @IBAction func clockInBtnTap(_ sender: UIButton) {
         clockBtn = "out"
         //    "inDate":"2019-02-11",
         //    "inTime":"2019-02-11 01:01:06",
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
+        sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
+        clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
         self.singleButtonAlertWith(message: .custom("Clock In" ) , completionOnButton: nil)
     }
     
-    @IBAction func restInBtnTap(_ sender: UIButton) {
-        clockBtn = "restin"
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.singleButtonAlertWith(message: .custom("Rest In" ) , completionOnButton: nil)
-    }
-    @IBAction func restOutBtnTap(_ sender: UIButton) {
-        clockBtn = "restout"
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.singleButtonAlertWith(message: .custom("Rest Out" ) , completionOnButton: nil)
-    }
-    @IBAction func roomingInBtnTap(_ sender: UIButton) {
-        clockBtn = "roomingin"
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.singleButtonAlertWith(message: .custom("roomInBtn. In" ) , completionOnButton: nil)
-    }
-    @IBAction func roomingOutBtnTap(_ sender: UIButton) {
-        clockBtn = "roomingout"
-        //sender.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.clockInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.clockOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.restOutBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingInBtn.setBackgroundImage(UIImage(named:"field"), for: .normal)
-        self.roomingOutBtn.setBackgroundImage(UIImage(named:"signInBg"), for: .normal)
-        self.singleButtonAlertWith(message: .custom("roomInBtn. Out" ) , completionOnButton: nil)
-    }
     @IBAction func backBtnTap(_ sender: Any) {
       self.navigationController?.popViewController(animated: true)
     }
@@ -311,26 +176,6 @@ class AttendanceVC: UIViewController,QRCodeReaderViewControllerDelegate {
             let getCurrentDate = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd")
             let getCurrentTime = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd hh:mm:ss")
             self.markAttendance(attendanceType: "0", inDate: getCurrentDate, inTime: getCurrentTime, outDate: "", outTime: "", qrCode: qrCode, phoneNumber: phoneNumber)
-        }
-        else if self.clockBtn == "restin" {
-            let getCurrentDate = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd")
-            let getCurrentTime = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd hh:mm:ss")
-            self.markAttendance(attendanceType: "2", inDate: getCurrentDate, inTime: getCurrentTime, outDate: "", outTime: "", qrCode: qrCode, phoneNumber: phoneNumber)
-        }
-        else if self.clockBtn == "restout" {
-            let getCurrentDate = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd")
-            let getCurrentTime = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd hh:mm:ss")
-            self.markAttendance(attendanceType: "3", inDate: getCurrentDate, inTime: getCurrentTime, outDate: "", outTime: "", qrCode: qrCode, phoneNumber: phoneNumber)
-        }
-        else if self.clockBtn == "roomingin" {
-            let getCurrentDate = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd")
-            let getCurrentTime = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd hh:mm:ss")
-            self.markAttendance(attendanceType: "4", inDate: getCurrentDate, inTime: getCurrentTime, outDate: "", outTime: "", qrCode: qrCode, phoneNumber: phoneNumber)
-        }
-        else if self.clockBtn == "roomingout" {
-            let getCurrentDate = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd")
-            let getCurrentTime = Utility.shared.getCurrentDateAndTime(format: "yyyy-MM-dd hh:mm:ss")
-            self.markAttendance(attendanceType: "5", inDate: getCurrentDate, inTime: getCurrentTime, outDate: "", outTime: "", qrCode: qrCode, phoneNumber: phoneNumber)
         }
     }
     private func markAttendance(attendanceType: String, inDate: String, inTime: String, outDate: String, outTime: String, qrCode: String, phoneNumber: String) {

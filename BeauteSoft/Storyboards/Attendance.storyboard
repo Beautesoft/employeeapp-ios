@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -104,7 +104,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2g-1h-Tug" customClass="UIViewCustomClass" customModule="Beautesoft_HR" customModuleProvider="target">
-                                                <rect key="frame" x="2" y="10" width="410" height="325"/>
+                                                <rect key="frame" x="2" y="10" width="410" height="195"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lzb-He-KVm">
                                                         <rect key="frame" x="30" y="10" width="353" height="110"/>
@@ -161,72 +161,14 @@
                                                             <constraint firstAttribute="height" constant="55" id="r47-dx-0BY"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GDa-yU-XIC" userLabel="SVRest">
-                                                        <rect key="frame" x="25" y="195" width="360" height="55"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkT-o3-aEe">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="55"/>
-                                                                <state key="normal" title="REST IN" backgroundImage="field">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="restInBtnTap:" destination="Ymi-gk-fvX" eventType="touchUpInside" id="mLB-Md-0ID"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOl-qh-xz0" userLabel="Rest Out Btn">
-                                                                <rect key="frame" x="190" y="0.0" width="170" height="55"/>
-                                                                <state key="normal" title="REST OUT" backgroundImage="field">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="restOutBtnTap:" destination="Ymi-gk-fvX" eventType="touchUpInside" id="kMI-It-VQx"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="55" id="YJY-Mc-Cy4"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nmF-eC-ZMH" userLabel="SVRoom">
-                                                        <rect key="frame" x="25" y="260" width="360" height="55"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2g-8W-Iqk" userLabel="Rooming In Btn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="170" height="55"/>
-                                                                <state key="normal" title="ROOMING IN" backgroundImage="field">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="roomingInBtnTap:" destination="Ymi-gk-fvX" eventType="touchUpInside" id="VK2-c7-alx"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wN-cb-rV4" userLabel="Rooming Out Btn">
-                                                                <rect key="frame" x="190" y="0.0" width="170" height="55"/>
-                                                                <state key="normal" title="ROOMING OUT" backgroundImage="field">
-                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="roomingOutBtnTap:" destination="Ymi-gk-fvX" eventType="touchUpInside" id="iuq-gv-rlP"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="55" id="cfi-lI-8DM"/>
-                                                        </constraints>
-                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="GDa-yU-XIC" secondAttribute="trailing" constant="25" id="7k1-ZS-04X"/>
                                                     <constraint firstAttribute="trailing" secondItem="4Qp-rC-FWz" secondAttribute="trailing" constant="25" id="7uO-zy-NY2"/>
-                                                    <constraint firstItem="nmF-eC-ZMH" firstAttribute="leading" secondItem="B2g-1h-Tug" secondAttribute="leading" constant="25" id="9fE-y6-1Wt"/>
-                                                    <constraint firstAttribute="bottom" secondItem="GDa-yU-XIC" secondAttribute="bottom" constant="75" id="ClT-Pd-iVX"/>
                                                     <constraint firstItem="4Qp-rC-FWz" firstAttribute="top" secondItem="lzb-He-KVm" secondAttribute="bottom" constant="10" id="JSP-XU-Zxy"/>
                                                     <constraint firstItem="4Qp-rC-FWz" firstAttribute="leading" secondItem="B2g-1h-Tug" secondAttribute="leading" constant="25" id="TAr-Rf-8V1"/>
-                                                    <constraint firstItem="GDa-yU-XIC" firstAttribute="leading" secondItem="B2g-1h-Tug" secondAttribute="leading" constant="25" id="UPc-wS-J9O"/>
-                                                    <constraint firstAttribute="height" constant="325" id="bx7-tD-v1d"/>
-                                                    <constraint firstAttribute="bottom" secondItem="nmF-eC-ZMH" secondAttribute="bottom" constant="10" id="lVx-cI-h6B"/>
+                                                    <constraint firstAttribute="height" constant="195" id="bx7-tD-v1d"/>
                                                     <constraint firstAttribute="trailing" secondItem="lzb-He-KVm" secondAttribute="trailing" constant="27" id="oz7-Ol-6h3"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4Qp-rC-FWz" secondAttribute="bottom" constant="140" id="rGk-zD-1nD"/>
-                                                    <constraint firstAttribute="trailing" secondItem="nmF-eC-ZMH" secondAttribute="trailing" constant="25" id="sNX-9I-gTb"/>
+                                                    <constraint firstAttribute="bottom" secondItem="4Qp-rC-FWz" secondAttribute="bottom" constant="10" id="rGk-zD-1nD"/>
                                                     <constraint firstItem="lzb-He-KVm" firstAttribute="top" secondItem="B2g-1h-Tug" secondAttribute="top" constant="10" id="uCs-B9-sYj"/>
                                                     <constraint firstItem="lzb-He-KVm" firstAttribute="leading" secondItem="B2g-1h-Tug" secondAttribute="leading" constant="30" id="vhA-XQ-Tw4"/>
                                                 </constraints>
@@ -258,14 +200,14 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzA-4o-XPO">
-                                                <rect key="frame" x="20" y="350" width="374" height="317"/>
+                                                <rect key="frame" x="20" y="220" width="374" height="447"/>
                                                 <state key="normal" image="Attendence_barcode"/>
                                                 <connections>
                                                     <action selector="barCodeScanBtnTap:" destination="Ymi-gk-fvX" eventType="touchUpInside" id="DQq-jG-Rqe"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap To Scan QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sv-fd-4lf">
-                                                <rect key="frame" x="117.5" y="493.5" width="179" height="30"/>
+                                                <rect key="frame" x="117.5" y="428.5" width="179" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -331,19 +273,13 @@
                         <outlet property="lblStatus" destination="Iab-KO-32H" id="E9X-x8-CNk"/>
                         <outlet property="lblTapToScan" destination="4sv-fd-4lf" id="bQB-1l-41P"/>
                         <outlet property="lblTime" destination="t6m-C4-ZVU" id="Ny5-sp-zAa"/>
-                        <outlet property="restInBtn" destination="fkT-o3-aEe" id="ZUy-58-bxo"/>
-                        <outlet property="restOutBtn" destination="aOl-qh-xz0" id="VRE-qp-eKc"/>
-                        <outlet property="roomingInBtn" destination="S2g-8W-Iqk" id="jgN-sf-2cB"/>
-                        <outlet property="roomingOutBtn" destination="0wN-cb-rV4" id="Zqq-uG-tyN"/>
-                        <outlet property="stackViewRest" destination="GDa-yU-XIC" id="iX0-K4-D2x"/>
-                        <outlet property="stackViewRoom" destination="nmF-eC-ZMH" id="BPy-Pj-tbK"/>
                         <outlet property="stackVwUseInfo" destination="lzb-He-KVm" id="rqC-P5-aBI"/>
                         <outlet property="vwInfoHeightConst" destination="bx7-tD-v1d" id="oY5-oX-w5Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRy-eh-NkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11512" y="-618"/>
+            <point key="canvasLocation" x="13711.594202898552" y="-204.91071428571428"/>
         </scene>
     </scenes>
     <resources>
