@@ -1109,7 +1109,6 @@
 				606FDCF1BEDD45F32A1A9F35 /* Pods-BeauteSoft.debug.xcconfig */,
 				CF1AF6C6431853032B0B8E1D /* Pods-BeauteSoft.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1551,14 +1550,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5.1;
 				DEVELOPMENT_TEAM = WKVWWJ792U;
 				INFOPLIST_FILE = BeauteSoft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imark.BeauteSoft;
 				PRODUCT_NAME = "Beautesoft HR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1574,14 +1573,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5.1;
 				DEVELOPMENT_TEAM = WKVWWJ792U;
 				INFOPLIST_FILE = BeauteSoft/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.imark.BeauteSoft;
 				PRODUCT_NAME = "Beautesoft HR";
 				PROVISIONING_PROFILE_SPECIFIER = "";
