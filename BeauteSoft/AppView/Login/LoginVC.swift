@@ -141,29 +141,29 @@ class LoginVC: UIViewController {
                 base = "http://103.253.15.102:9399/Main_API/api/"
                 baseDashboard = "http://103.253.15.102:9399/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "KIREI"){
-                base = "http://103.253.15.102:9596/Main_API/"
-                baseDashboard = "http://103.253.15.102:9596/Main_API/"}
+                base = "http://103.253.15.102:9596/Main_API/api/"
+                baseDashboard = "http://103.253.15.102:9596/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "LUXELLE"){
-                base = "http://103.253.14.203:4030/Main_API/"
-                baseDashboard = "http://103.253.14.203:4030/Main_API/"}
+                base = "http://103.253.14.203:4030/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4030/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "FOREVER"){
-                base = "http://103.253.14.203:4031/Main_API/"
-                baseDashboard = "http://103.253.14.203:4031/Main_API/"}
+                base = "http://103.253.14.203:4031/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4031/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "LOYALSPA"){
-                base = "http://103.253.14.203:4042/Main_API/"
-                baseDashboard = "http://103.253.14.203:4042/Main_API/"}
+                base = "http://103.253.14.203:4042/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4042/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "MONARCH"){
-                base = "http://103.253.14.203:4043/Main_API/"
-                baseDashboard = "http://103.253.14.203:4043/Main_API/"}
+                base = "http://103.253.14.203:4043/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4043/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ZENTH"){
-                base = "http://103.253.14.203:4041/Main_API/"
-                baseDashboard = "http://103.253.14.203:4041/Main_API/"}
+                base = "http://103.253.14.203:4041/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4041/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "DVCBORNEO"){
-                base = "http://103.253.14.203:4046/Main_API/"
-                baseDashboard = "http://103.253.14.203:4046/Main_API/"}
+                base = "http://103.253.14.203:4046/Main_API/api/"
+                baseDashboard = "http://103.253.14.203:4046/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SCENEFIS"){
-                base = "http://103.253.15.75:7049/Main_API/"
-                baseDashboard = "http://103.253.15.75:7049/Main_API/"}
+                base = "http://103.253.15.75:7049/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7049/Main_API/api/"}
             else {
                 base = "http://103.253.14.203/main/api/"
                 baseDashboard = "http://103.253.14.203/main/api/"}
