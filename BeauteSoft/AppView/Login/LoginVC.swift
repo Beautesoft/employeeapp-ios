@@ -47,17 +47,17 @@ class LoginVC: UIViewController {
                 base = "http://103.253.14.203/main/api/"
                 baseDashboard = "http://103.253.14.203/main/api/"}
             else if (txtLocale.trimmedText.uppercased() == "BEAUTY"){
-                base = "http://118.189.74.184/beauty/api/"
-                baseDashboard = "http://118.189.74.184/beauty/api/"}
+                base = "http://103.253.15.109:9339/beauty/api/"
+                baseDashboard = "http://103.253.15.109:9339/beauty/api/"}
             else if (txtLocale.trimmedText.uppercased() == "OHS"){
-                base = "http://118.189.74.184/ohs/api/"
-                baseDashboard = "http://118.189.74.184/ohs/api/"}
+                base = "http://103.253.15.109:9339/ohs/api/"
+                baseDashboard = "http://103.253.15.109:9339/ohs/api/"}
             else if (txtLocale.trimmedText.uppercased() == "OHC"){
                 base = "http://originida.ddns.net:8686/main/api/"
                 baseDashboard = "http://originida.ddns.net:8686/main/api/"}
             else if (txtLocale.trimmedText.uppercased() == "TNC"){
-                base = "http://103.253.14.203:4001/main_api/"
-                baseDashboard = "http://103.253.14.203:4001/main_api/"}
+                base = "http://103.253.15.75:7045/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7045/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "TNCOLD"){
                 base = "http://103.253.15.102:88/cloudtncapi/api/"
                 baseDashboard = "http://103.253.15.102:88/cloudtncapi/api"}
@@ -79,22 +79,22 @@ class LoginVC: UIViewController {
                 base = "http://103.253.15.102/demo/api/"
                 baseDashboard = "http://103.253.15.102/demo/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SKINCLOUD"){
-                base = "http://103.253.14.203:4002/main_api/"
-                baseDashboard = "http://103.253.14.203:4002/main_api/"}
+                base = "http://103.253.15.75:7010/main_api/api/"
+                baseDashboard = "http://103.253.15.75:7010/main_api/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SKINCLOUDOLD"){
                 base = "http://sequoiasg.ddns.net:7010/main_api/api/"
                 baseDashboard = "http://sequoiasg.ddns.net:7010/main_api/api/"}
                 //base = "http://103.253.15.73:8489/Main_API/api/"
                 //baseDashboard = "http://103.253.15.73:8489/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ESTH"){
-                base = "http://103.253.15.102:9399/Main_API/api/"
-                baseDashboard = "http://103.253.15.102:9399/Main_API/api/"}
+                base = "http://103.253.15.75:9493/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:9493/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ESTHOLD"){
                 base = "http://103.253.15.73:8080/mainesth/api/"
                 baseDashboard = "http://103.253.15.73:8080/mainesth/api/"}
             else if (txtLocale.trimmedText.uppercased() == "BEST"){
-                base = "http://103.253.15.75:9596/mainapi/api/"
-                baseDashboard = "http://103.253.15.75:9596/mainapi/api/"}
+                base = "http://103.253.15.75:7017/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7017/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "CUTTOUR"){
                 base = "http://sequoiasg.ddns.net:7014/mainapi/api/"
                 baseDashboard = "http://sequoiasg.ddns.net:7014/mainapi/api/"}
@@ -102,65 +102,65 @@ class LoginVC: UIViewController {
                 base = "http://103.253.14.203:4003/Main_API/"
                 baseDashboard = "http://103.253.14.203:4003/Main_API/"}
             else if (txtLocale.trimmedText.uppercased() == "ELVA"){
-                base = "http://103.253.14.203:4004/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4004/Main_API/api/"}
+                base = "http://103.253.15.75:7022/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7022/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SYNTHESIS"){
-                base = "http://103.253.14.203:4005/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4005/Main_API/api/"}
+                base = "http://103.253.15.75:7021/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7021/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "MAGICION"){
-                base = "http://103.253.14.203:4006/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4006/Main_API/api/"}
+                base = "http://103.253.15.75:7008/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7008/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "CITI"){
-                base = "http://103.253.14.203:4011/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4011/Main_API/api/"}
+                base = "http://103.253.15.75:7005/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7005/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ETERNAL"){
-                base = "http://103.253.14.203:4020/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4020/Main_API/api/"}
+                base = "http://103.253.15.75:7028/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7028/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "IMPRESSION"){
-                base = "http://103.253.15.102:9591/Main_API/api/"
-                baseDashboard = "http://103.253.15.102:9591/Main_API/api/"}
+                base = "http://103.253.15.75:4005/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:4005/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "EMBRACE"){
-                base = "http://103.253.14.203:4015/Main_API/"
-                baseDashboard = "http://103.253.14.203:4015/Main_API/"}
+                base = "http://103.253.15.75:7016/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7016/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "MYDEMO"){
-                base = "http://103.253.14.203:4029/mainapi/"
-                baseDashboard = "http://103.253.14.203:4029/mainapi/"}
+                base = "http://103.253.15.75:7018/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7018/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "NAILQUEEN"){
-                base = "http://103.253.14.203:4012/Main_API/"
-                baseDashboard = "http://103.253.14.203:4012/Main_API/"}
+                base = "http://103.253.15.75:7026/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7026/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SINCERESKIN"){
-                base = "http://103.253.15.102:9598/Main_API/"
-                baseDashboard = "http://103.253.15.102:9598/Main_API/"}
+                base = "http://103.253.15.75:7001/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7001/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SLBEAUTY"){
-                base = "http://103.253.15.102:9595/Main_API/"
-                baseDashboard = "http://103.253.15.102:9595/Main_API/"}
+                base = "http://103.253.15.75:7053/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7053/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ESTHETIKA"){
-                base = "http://103.253.15.102:9399/Main_API/api/"
-                baseDashboard = "http://103.253.15.102:9399/Main_API/api/"}
+                base = "http://103.253.15.75:9493/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:9493/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ESTHETICA"){
-                base = "http://103.253.15.102:9399/Main_API/api/"
-                baseDashboard = "http://103.253.15.102:9399/Main_API/api/"}
+                base = "http://103.253.15.75:9493/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:9493/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "KIREI"){
-                base = "http://103.253.15.102:9596/Main_API/api/"
-                baseDashboard = "http://103.253.15.102:9596/Main_API/api/"}
+                base = "http://103.253.15.75:7054/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7054/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "LUXELLE"){
-                base = "http://103.253.14.203:4030/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4030/Main_API/api/"}
+                base = "http://103.253.15.75:7032/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7032/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "FOREVER"){
-                base = "http://103.253.14.203:4031/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4031/Main_API/api/"}
+                base = "http://103.253.15.75:7033/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7033/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "LOYALSPA"){
-                base = "http://103.253.14.203:4042/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4042/Main_API/api/"}
+                base = "http://103.253.15.75:7041/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7041/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "MONARCH"){
-                base = "http://103.253.14.203:4043/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4043/Main_API/api/"}
+                base = "http://103.253.15.75:7042/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7042/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "ZENTH"){
-                base = "http://103.253.14.203:4041/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4041/Main_API/api/"}
+                base = "http://103.253.15.75:7040/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7040/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "DVCBORNEO"){
-                base = "http://103.253.14.203:4046/Main_API/api/"
-                baseDashboard = "http://103.253.14.203:4046/Main_API/api/"}
+                base = "http://103.253.15.75:7043/Main_API/api/"
+                baseDashboard = "http://103.253.15.75:7043/Main_API/api/"}
             else if (txtLocale.trimmedText.uppercased() == "SCENEFIS"){
                 base = "http://103.253.15.75:7049/Main_API/api/"
                 baseDashboard = "http://103.253.15.75:7049/Main_API/api/"}
