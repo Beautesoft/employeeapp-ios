@@ -24,18 +24,19 @@ workflows:
       events:
         - push
       branch_patterns:
-        - pattern: '*'
+        - pattern: "*"
           include: true
           source: true
       cancel_previous_builds: false
     scripts:
-      - echo "Hello, ${{ inputs.name }}"
-      - ...
+      - echo "Hello, $name"
+      - echo "Running build..."
+      # Add your actual build commands here
     artifacts:
       - build/**/outputs/bundle/**/*.aab
     publishing:
       email:
         recipients:
-          - name@example.com
+          - yoonus@sequoia-asia.com
       scripts:
-        - echo 'Post-publish script'
+        - echo "Post-publish script"
