@@ -1,0 +1,164 @@
+# Codemagic CI for BeauteSoft HR (iOS)
+#
+# Two workflows:
+#   ios-compile-check  - compiles for the iOS Simulator, no Apple account / signing needed.
+#                        Runs on every push. Use it to catch compile errors first.
+#   ios-testflight     - signed App Store build, uploaded to TestFlight. Start manually.
+#
+# One-time setup in Codemagic (UI):
+#   1. Teams > Integrations > Developer Portal: add an App Store Connect API key
+#      (App Store Connect > Users and Access > Integrations > App Store Connect API,
+#      role "App Manager"). Name the integration exactly: BeauteSoft ASC
+#   2. Teams > Code signing identities:
+#      - iOS certificates: generate (or upload) an "Apple Distribution" certificate.
+#      - iOS provisioning profiles: fetch the App Store profile for com.imark.BeauteSoft.
+#   3. App > Environment variables, group "firebase" (mark as Secure):
+#        GOOGLE_SERVICE_INFO_PLIST = base64 of GoogleService-Info.plist
+#      (Firebase console > project beautesoftapps > iOS app com.imark.BeauteSoft.
+#       On Windows PowerShell:
+#       [Convert]::ToBase64String([IO.File]::ReadAllBytes("GoogleService-Info.plist")) )
+#   4. Optional: change APP_VERSION below. It must be higher than the version live
+#      on the App Store (3.4) and than any version train already in App Store Connect.
+
+definitions:
+  env_versions: &env_versions
+    xcode: latest
+    cocoapods: default
+  common_vars: &common_vars
+    XCODE_WORKSPACE: "BeauteSoft.xcworkspace"
+    XCODE_SCHEME: "BeauteSoft"
+    BUNDLE_ID: "com.imark.BeauteSoft"
+    APP_STORE_APPLE_ID: "1483351310"
+  scripts:
+    - &write_firebase_plist
+      name: Write GoogleService-Info.plist
+      script: |
+        set -e
+        TARGET="$CM_BUILD_DIR/BeauteSoft/GoogleService-Info.plist"
+        if [ -n "$GOOGLE_SERVICE_INFO_PLIST" ]; then
+          echo "$GOOGLE_SERVICE_INFO_PLIST" | base64 --decode > "$TARGET"
+          plutil -lint "$TARGET"
+        elif [ "$REQUIRE_FIREBASE_PLIST" = "true" ]; then
+          echo "ERROR: GOOGLE_SERVICE_INFO_PLIST is not set (env group 'firebase')." >&2
+          exit 1
+        else
+          # Compile check only: a placeholder lets the build find the resource.
+          # An app built with this placeholder cannot reach Firebase.
+          echo "WARNING: GOOGLE_SERVICE_INFO_PLIST not set, using placeholder."
+          cat > "$TARGET" <<'PLIST'
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0"><dict>
+          <key>BUNDLE_ID</key><string>com.imark.BeauteSoft</string>
+          <key>PROJECT_ID</key><string>beautesoftapps</string>
+          <key>DATABASE_URL</key><string>https://beautesoftapps.firebaseio.com</string>
+        </dict></plist>
+        PLIST
+        fi
+    - &install_pods
+      name: Install CocoaPods dependencies
+      script: |
+        set -e
+        pod --version
+        pod install --repo-update
+
+workflows:
+  ios-compile-check:
+    name: iOS compile check (Simulator, unsigned)
+    instance_type: mac_mini_m2
+    max_build_duration: 45
+    environment:
+      <<: *env_versions
+      groups:
+        - firebase
+      vars:
+        <<: *common_vars
+        REQUIRE_FIREBASE_PLIST: "false"
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: "*"
+          include: true
+          source: true
+      cancel_previous_builds: true
+    scripts:
+      - *write_firebase_plist
+      - *install_pods
+      - name: Build for iOS Simulator
+        script: |
+          set -o pipefail
+          xcodebuild \
+            -workspace "$XCODE_WORKSPACE" \
+            -scheme "$XCODE_SCHEME" \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination "generic/platform=iOS Simulator" \
+            CODE_SIGNING_ALLOWED=NO \
+            build 2>&1 | tee /tmp/xcodebuild_compile.log | grep -E "error:|warning: .*deprecated|BUILD (SUCCEEDED|FAILED)" || true
+          # Fail the step if the build failed (grep above hides the exit code).
+          grep -q "BUILD SUCCEEDED" /tmp/xcodebuild_compile.log
+    artifacts:
+      - /tmp/xcodebuild_compile.log
+    publishing:
+      email:
+        recipients:
+          - yoonus@sequoia-asia.com
+        notify:
+          success: false
+          failure: true
+
+  ios-testflight:
+    name: iOS release to TestFlight
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: BeauteSoft ASC
+    environment:
+      <<: *env_versions
+      ios_signing:
+        distribution_type: app_store
+        bundle_identifier: com.imark.BeauteSoft
+      groups:
+        - firebase
+      vars:
+        <<: *common_vars
+        REQUIRE_FIREBASE_PLIST: "true"
+        APP_VERSION: "3.5"
+    # No automatic trigger: start from the Codemagic UI ("Start new build").
+    scripts:
+      - *write_firebase_plist
+      - *install_pods
+      - name: Apply provisioning profiles
+        script: xcode-project use-profiles
+      - name: Pick build number
+        script: |
+          set -e
+          # Next build number = latest TestFlight build for this version + 1 (1 if none).
+          LATEST=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID" \
+                     --pre-release-version "$APP_VERSION" 2>/dev/null || echo 0)
+          NEXT=$((${LATEST%%.*} + 1))
+          echo "Version $APP_VERSION, build $NEXT"
+          echo "NEXT_BUILD_NUMBER=$NEXT" >> "$CM_ENV"
+      - name: Build signed IPA
+        script: |
+          xcode-project build-ipa \
+            --workspace "$XCODE_WORKSPACE" \
+            --scheme "$XCODE_SCHEME" \
+            --archive-xcargs "MARKETING_VERSION=$APP_VERSION CURRENT_PROJECT_VERSION=$NEXT_BUILD_NUMBER"
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      email:
+        recipients:
+          - yoonus@sequoia-asia.com
+        notify:
+          success: true
+          failure: true
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true
+        submit_to_app_store: false
