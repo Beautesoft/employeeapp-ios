@@ -187,6 +187,7 @@
 		A2F04834226BBCB0000D6412 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F04833226BBCB0000D6412 /* SettingVC.swift */; };
 		A2F04837226BBCD8000D6412 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F04836226BBCD8000D6412 /* Settings.storyboard */; };
 		CE2C29E42A52A21800436924 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE2C29E32A52A21800436924 /* GoogleService-Info.plist */; };
+		7B1F0A022E5A000100A1B2C3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7B1F0A012E5A000100A1B2C3 /* PrivacyInfo.xcprivacy */; };
 		CEB6F39B2A4BCA40001E2365 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F39A2A4BCA34001E2365 /* libz.tbd */; };
 		CEB6F39C2A4BCA58001E2365 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CEB6F3992A4BC984001E2365 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
@@ -374,7 +375,8 @@
 		A2F0482F226BA5E1000D6412 /* SideBarMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideBarMenuVC.swift; sourceTree = "<group>"; };
 		A2F04833226BBCB0000D6412 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		A2F04836226BBCD8000D6412 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		CE2C29E32A52A21800436924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../reactnative/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE2C29E32A52A21800436924 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B1F0A012E5A000100A1B2C3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CEB6F3992A4BC984001E2365 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CEB6F39A2A4BCA34001E2365 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CEB6F39D2A4BCA6D001E2365 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -984,6 +986,7 @@
 				A2AE2B0B226AF9A800E57718 /* Storyboards */,
 				A2AE2A81226AF77C00E57718 /* Assets.xcassets */,
 				CE2C29E32A52A21800436924 /* GoogleService-Info.plist */,
+				7B1F0A012E5A000100A1B2C3 /* PrivacyInfo.xcprivacy */,
 				A2AE2A86226AF77C00E57718 /* Info.plist */,
 			);
 			path = BeauteSoft;
@@ -1201,6 +1204,7 @@
 				0CC95E242813E3EF0016F211 /* AppointmentList.storyboard in Resources */,
 				8CF2DF5E227CC84A0096D928 /* WorkSchedule.storyboard in Resources */,
 				CE2C29E42A52A21800436924 /* GoogleService-Info.plist in Resources */,
+				7B1F0A022E5A000100A1B2C3 /* PrivacyInfo.xcprivacy in Resources */,
 				A2AE2AF8226AF96400E57718 /* Location.gpx in Resources */,
 				8C1053BB22CF2D2300D9F89E /* DashboardDetailTVC.xib in Resources */,
 				0C1C711028128383000568FD /* SelectStaffTableViewCell.xib in Resources */,
@@ -1492,7 +1496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1547,7 +1551,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

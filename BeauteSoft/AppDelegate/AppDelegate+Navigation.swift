@@ -29,12 +29,43 @@ extension AppDelegate {
     func checkForNavigation() {
         if let dictionary =  UserDefaultsManager.profile {
             profile = Profile(fromDictionary: dictionary)
-            gotoHome()
+            BaseURLResolver.restoreSaved()
+            if BaseURLResolver.hasValidSavedBaseUrl {
+                gotoHome()
+            } else {
+                // Logged in, but no usable server saved (e.g. upgraded from v3.4, which saved
+                // the retired default server). Resolve it before Home fires any API calls.
+                showLaunchPlaceholder()
+                BaseURLResolver.refreshForLoggedInUser { success in
+                    if success {
+                        self.gotoHome()
+                    } else {
+                        // Could not resolve (offline / code removed): back to Login. Logging in
+                        // again re-runs the lookup and shows a specific error if it still fails.
+                        self.logout()
+                    }
+                }
+            }
         } else {
             gotoLogin()
         }
     }
     
+    private func showLaunchPlaceholder() {
+        let placeholder = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController() ?? UIViewController()
+        if placeholder.view.backgroundColor == nil { placeholder.view.backgroundColor = .white }
+        let spinner = UIActivityIndicatorView(style: .gray)
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.startAnimating()
+        placeholder.view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: placeholder.view.centerXAnchor),
+            spinner.bottomAnchor.constraint(equalTo: placeholder.view.bottomAnchor, constant: -80)
+        ])
+        window?.rootViewController = placeholder
+        window?.makeKeyAndVisible()
+    }
+
     func logout() {
         UserDefaultsManager.resetDefaults()
         profile = Profile()
