@@ -19,8 +19,6 @@ Pods*.txt
 # Carthage
 /Carthage/Build/
 
-# App icons
-*.appiconset/
 
 # Archive
 *.ipa
