@@ -19,8 +19,6 @@ Pods*.txt
 # Carthage
 /Carthage/Build/
 
-# App icons
-*.appiconset/
 
 # Archive
 *.ipa
@@ -32,3 +30,5 @@ Pods*.txt
 .git/
 Beautesoft HR 13102022/
 Beautesoft HR 13102022/BeauteSoft HR.ipa
+# Firebase config: injected by CI (codemagic.yaml), never commit to this public repo
+GoogleService-Info.plist
