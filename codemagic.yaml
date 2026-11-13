@@ -10,8 +10,10 @@
 #      (App Store Connect > Users and Access > Integrations > App Store Connect API,
 #      role "App Manager"). Name the integration exactly: BeauteSoft ASC
 #   2. Teams > Code signing identities:
-#      - iOS certificates: generate (or upload) an "Apple Distribution" certificate.
-#      - iOS provisioning profiles: fetch the App Store profile for com.imark.BeauteSoft.
+#      - iOS certificates: generate (or upload) an "Apple Distribution" certificate,
+#        reference name: beautesoft_distribution
+#      - iOS provisioning profiles: fetch the App Store profile for com.imark.BeauteSoft,
+#        reference name: beautesoft_appstore
 #   3. App > Environment variables, group "firebase" (mark as Secure):
 #        GOOGLE_SERVICE_INFO_PLIST = base64 of GoogleService-Info.plist
 #      (Firebase console > project beautesoftapps > iOS app com.imark.BeauteSoft.
@@ -117,9 +119,13 @@ workflows:
       app_store_connect: BeauteSoft ASC
     environment:
       <<: *env_versions
+      # Signing files are picked by their Codemagic reference names
+      # (Team settings > Code signing identities), not by bundle ID lookup.
       ios_signing:
-        distribution_type: app_store
-        bundle_identifier: com.imark.BeauteSoft
+        provisioning_profiles:
+          - beautesoft_appstore
+        certificates:
+          - beautesoft_distribution
       groups:
         - firebase
       vars:
